@@ -12,11 +12,23 @@ export class TableComponent {
   editing = {};
   @Input() rows = [];
   temp = [...data];
+  selected = [];
 
   loadingIndicator = true;
   reorderable = true;
+  checkboxable: true;
 
-  @Input() columns = [{ prop: 'unit' }, { name: 'Priority' }, { name: 'Type' }, { name: 'Description' }, { name: 'Status' }, { name: 'SLA Status' }, { name: 'Aging' }, { name: 'Action' }];
+  @Input() columns = [{
+    prop: 'selected', 
+    name: '',
+    // sortable: false,
+    // canAutoResize: false,
+    // draggable: false,
+    // resizable: false,
+    headerCheckboxable: true,
+    checkboxable: true,
+    width: 70
+  }, { name: 'Unit' }, { name: 'Priority' }, { name: 'Type' }, { name: 'Description' }, { name: 'Status' }, { name: 'SLA Status' }, { name: 'Aging' }, { name: 'Action' }];
 
   @ViewChild(TableComponent, { static: false }) table: TableComponent;
   constructor() {
@@ -27,7 +39,7 @@ export class TableComponent {
     }, 1500);
   }
 
-  updateFilter(event){
+  updateFilter(event) {
     const val = event.target.value.toLowerCase();
 
     // filter our data
