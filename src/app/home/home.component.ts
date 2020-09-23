@@ -10,7 +10,9 @@ const data: any = require('./reusable.json');
 })
 export class HomeComponent implements OnInit {
   rows = [];
-  columns = [{ name: 'Priority' }, { name: 'Type' }, { name: 'Description' }, { name: 'Status' }, { name: 'SLA Status' }, { name: 'Aging' }, { name: 'Action' }];
+  columns = [{
+    prop: 'selected', name: '', headerCheckboxable: true, checkboxable: true, width: 70}, 
+    { name: 'Priority' }, { name: 'Type' }, { name: 'Description' }, { name: 'Status' }, { name: 'SLA Status' }, { name: 'Aging' }, { name: 'Action' }];
 
   constructor() {
     this.rows = data;
