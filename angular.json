@@ -28,7 +28,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "./node_modules/bootstrap/dist/css/bootstrap.css"
+                
+              },
+              "node_modules/@swimlane/ngx-datatable/index.css",
+              "node_modules/@swimlane/ngx-datatable/themes/material.css",
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css"
             ],
             "scripts": []
           },
@@ -123,6 +130,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "table-bootstrap"
+    }
+  },
+  "defaultProject": "table-bootstrap",
+  "cli": {
+    "analytics": "607e1283-4893-437b-b22a-144ee62398d2"
+  }
 }
